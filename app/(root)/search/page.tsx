@@ -23,7 +23,7 @@ export default function SearchPolls() {
   useEffect(() => {
     // Use AbortController for race condition-free fetching
     const controller = new AbortController();
-    const { signal } = controller;
+    // const { signal } = controller;
 
     const fetchResults = async () => {
       setIsLoading(true);
@@ -32,8 +32,8 @@ export default function SearchPolls() {
 
       try {
         const response = await authFetch(
-          `${process.env.NEXT_PUBLIC_SEARCH}=${debouncedSearchTerm}`, // Your API endpoint
-          { signal } // Pass the signal to fetch
+          `https://personal-project-backend-server.onrender.com/rating-system/search?name=${debouncedSearchTerm}`, // Your API endpoint
+          // { signal } // Pass the signal to fetch
         );
 
         if (!response.ok) {
