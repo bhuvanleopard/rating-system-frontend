@@ -112,7 +112,7 @@ export default function CreatePollForm() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to create poll");
+        throw new Error(errorData.message);
       }
 
       // 3. Redirect on Success
